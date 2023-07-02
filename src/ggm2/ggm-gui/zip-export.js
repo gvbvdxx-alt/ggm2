@@ -36,7 +36,8 @@ window.gui.exportZip = async function () {
 		title: document.getElementById("gameTitle").value,
 		thumb: document.getElementById("gameScreen").toDataURL(),
 		shared: window.shared,
-		dis: document.getElementById("discription").value
+		dis: document.getElementById("discription").value,
+		messages:vm.messageData
 	}),{});
 	return zip;
 };
@@ -49,6 +50,7 @@ window.gui.importZip = async function (file) {
 	workspace.clear();
 	document.getElementById("filesLoadedValue").innerHTML = `Extracting Data...`;
 	var data = JSON.parse(await window.zip.files["main.json"].async("text"));
+	vm.messageData = data.messages;
 	document.getElementById("gameTitle").value = data.title;
 	document.getElementById("discription").value = data.dis;
 	document.getElementById("filesLoaded").max = data.files.length;

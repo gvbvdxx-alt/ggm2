@@ -8,6 +8,7 @@ window.vm = {
 		mSecsSinceStart += ((today.getTimezoneOffset() - dstAdjust) * 60 * 1000);
 		return mSecsSinceStart / msPerDay;
 	},
+	messageData:[],
 	idcounter:0,
 	startTime:0,
 	resetTimer:() => {
@@ -22,6 +23,9 @@ window.vm = {
 						if (vm.project.resources[name].type == "audio") {
 							await vm.audioEngine.addToPreload(vm.project.resources[name].data);
 						}
+					}
+					for (var m of vm.messageData) {
+						vm.messages[m] = [];
 					}
 					vm.control.stop();
 					vm.resetTimer();
@@ -79,6 +83,7 @@ window.vm = {
 		this.compiadiblityMode = a;
 	},
 	compiadiblityMode: false,
+	messages:{},
 	project: {
 		mouseDown: false,
 		mouseX:0,

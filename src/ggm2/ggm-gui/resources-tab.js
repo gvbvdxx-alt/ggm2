@@ -54,7 +54,7 @@ resoureupload.onchange = function () {
                 resourceupload.value = "";
             }
             console.log(file.size);
-            if (file.size > 7000000 && window.options.addMaxFileSize) {
+            if (file.size > 7000000 && false) {
                 window.alert("file is too big! for reasons you cant upload something too big, if its music, please compress and find loops, it should help you");
             } else {
                 reader.readAsDataURL(file);

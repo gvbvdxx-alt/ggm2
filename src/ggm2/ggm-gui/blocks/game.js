@@ -592,6 +592,10 @@ Blockly.defineBlocksWithJsonArray([
           "c",
           "c"
         ],
+		[
+          "d",
+          "d"
+        ],
         [
           "e",
           "e"

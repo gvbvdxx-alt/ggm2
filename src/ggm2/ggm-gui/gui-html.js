@@ -23,7 +23,10 @@ module.exports = `
 			<p class="main_menu_item main_menu_item_p" title="start over and create a new project." id="New_Game" onclick="">New</p>
 			<p class="main_menu_item main_menu_item_p" title="save your project to be edited." onclick="save()">Save</p>
 			<p class="main_menu_item main_menu_item_p" title="load your project so it can be edited." onclick="load()">Load</p>
-			<p class="main_menu_item main_menu_item_p" title="export your project to be on websites." onclick="exportGame()">Export</p>
+			
+			<p class="main_menu_item main_menu_item_p" title="export your project to be on websites." onclick="exportGame()" hidden>Export</p>
+			
+			
 			<!--<p class="main_menu_item main_menu_item_p" title="save as an zip" onclick="saveZip();">Save GB2</p>-->
 			<!--<p class="main_menu_item main_menu_item_p" title="save as an zip" onclick="loadZip();">Load GB2</p>-->
 			<!--<p class="main_menu_item main_menu_item_p" onclick="window.open('./help/index.html')">Help</p>-->

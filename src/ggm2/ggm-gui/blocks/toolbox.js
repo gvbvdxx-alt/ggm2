@@ -322,7 +322,7 @@ var toolboxXML = `
 			
 			<block type="variables_set">
 				<value name="VALUE">
-					<block type="gvbvdxx_game_sprites_empty"></block>
+					<shadow type="gvbvdxx_game_sprites_empty"></shadow>
 				</value>
 				<field name="VAR">sprite</field>
 			</block>
@@ -331,12 +331,40 @@ var toolboxXML = `
 			<block type="gvbvdxx_game_sprites_set_img">
 			</block>
 			${blockSeparator}
-			<block type="gvbvdxx_game_sprites_move"></block>
-			<block type="gvbvdxx_game_sprites_set_position"></block>
-			<block type="gvbvdxx_game_sprites_ghost"></block>
-			<block type="gvbvdxx_game_sprites_size"></block>
+			<block type="gvbvdxx_game_sprites_move">
+				<value name="name">
+					<shadow type="gvbvdxx_operators_number"></shadow>
+				</value>
+			</block>
+			<block type="gvbvdxx_game_sprites_set_position">
+				<value name="pos">
+					<shadow type="gvbvdxx_operators_number">
+						<field name="NAME">10</field>
+					</shadow>
+				</value>
+			</block>
+			<block type="gvbvdxx_game_sprites_ghost">
+				<value name="ghost">
+					<shadow type="gvbvdxx_operators_number">
+						<field name="NAME">50</field>
+					</shadow>
+				</value>
+			</block>
+			<block type="gvbvdxx_game_sprites_size">
+				<value name="pos">
+					<shadow type="gvbvdxx_operators_number">
+						<field name="NAME">32</field>
+					</shadow>
+				</value>
+			</block>
 			<block type="gvbvdxx_game_sprites_flip"></block>
-			<block type="gvbvdxx_game_sprites_direction"></block>
+			<block type="gvbvdxx_game_sprites_direction">
+				<value name="NAME">
+					<shadow type="gvbvdxx_operators_number">
+						<field name="NAME">90</field>
+					</shadow>
+				</value>
+			</block>
 			${blockSeparator}
 			<block type="gvbvdxx_game_sprites_show"></block>
 			<block type="gvbvdxx_game_sprites_hide"></block>
@@ -405,7 +433,28 @@ var toolboxXML = `
 		</category>
 	</category>
 		<category colour="${BlockColors["audio"]}" name="Audio">
+			<block type="gvbvdxx_baudio_create">
+				<value name="dataurl">
+					<shadow type="gvbvdxx_files_dataurl"></shadow>
+				</value>
+			</block>
+			<block type="gvbvdxx_baudio_load"></block>
+			<block type="gvbvdxx_baudio_play"></block>
+			<block type="gvbvdxx_baudio_pause"></block>
+			<block type="gvbvdxx_baudio_setrate">
+				<value name="NAME">
+					<shadow type="gvbvdxx_operators_number"></shadow>
+				</value>
+			</block>
+			<block type="gvbvdxx_baudio_setvolume">
+				<value name="NAME">
+					<shadow type="gvbvdxx_operators_number"></shadow>
+				</value>
+			</block>
+			<block type="gvbvdxx_baudio_onended"></block>
+			${blockSeparator}
 			<block type="gvbvdxx_audio_playsfx"></block>
+			<block type="gvbvdxx_audio_waituntiload"></block>
 			${blockSeparator}
 			<block type="gvbvdxx_audio_playbgm"></block>
 			<block type="gvbvdxx_audio_pausebgm"></block>
@@ -469,6 +518,13 @@ var toolboxXML = `
 		<category colour="${BlockColors["other"]}" name="Other">
 			<block type="gvbvdxx_group"></block>
 			<block type="text_multiline"></block>
+			<block type="gvbvdxx_other_try_catch"></block>
+			<block type="gvbvdxx_brodcasts_send">
+				<value name="messagename">
+					<shadow type="gvbvdxx_operators_text"></shadow>
+				</value>
+			</block>
+			<block type="gvbvdxx_brodcasts_recived"></block>
 		</category>
 
 		<category colour="${BlockColors["display"]}" name="Monitors">

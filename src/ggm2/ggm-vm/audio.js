@@ -158,6 +158,7 @@ window.audioEngine = {
 		}catch(e){
 			console.warn("[AudioEngine]:error ignored" + e);
 		};
+		vm.betterAudio.stopAllAudios();
 	},
 	tickAudio:function () {
 		//console.log(this.bgm.isPlaying);

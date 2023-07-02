@@ -17,6 +17,7 @@ doScriptAdd("blockly/javascript_compressed.js");
 doScriptAdd("ggm-vm/index.js");
 doScriptAdd("ggm-vm/renderer.js");
 doScriptAdd("ggm-vm/audio.js");
+doScriptAdd("ggm-vm/better-audio-ctx.js");
 
 doScriptAdd("ggm-gui/theme.js");
 doScriptAdd("ggm-gui/index.js");

@@ -7,8 +7,11 @@ vm.attachAudioEngine(audioEngine);
 
 //updates the vm code when you edit the script space
 function myUpdateFunction(event) {
+	window.currentMessages.length = 0;
+	window.guiTopCode = "";
     var code = Blockly.JavaScript.workspaceToCode(workspace);
-    vm.code = code;
+	vm.messageData = window.currentMessages;
+    vm.code = guiTopCode+"\n"+code;
     window.showSaveDialog = true;
 }
 workspace.addChangeListener(myUpdateFunction);
