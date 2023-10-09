@@ -1,3 +1,4 @@
+var console = require("log");
 //dialogs
 var dialogBox = document.getElementById("dialogBox");
 var dialogBackground = document.getElementById("dialogBackground");

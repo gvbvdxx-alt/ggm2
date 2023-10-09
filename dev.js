@@ -1,4 +1,4 @@
-var gvbvdxxPack = require("gvbvdxx-pack");
+var gvbvdxxPack = require("gvbvdxx-pack-2");
 var fs = require("fs");
 var path = require("path");
 var FS = fs;

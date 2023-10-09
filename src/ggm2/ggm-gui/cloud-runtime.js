@@ -1,3 +1,4 @@
+var console = require("log");
 //cloud scripts
 window.enableCloudSend = true;
 class cloudProvider {
@@ -17,6 +18,7 @@ class cloudProvider {
             }
         });
         this.ws.onopen = function () {
+			console.log("Connected to Cloud provider successfully!");
             t.open = true;
         };
     }
@@ -60,12 +62,16 @@ class cloudProvider {
 }
 if (window.cloudsetup) {
     function connectLoop() {
+		console.log("Connection opening to Cloud provider...");
         var api = new cloudProvider(window.cloudsetup.ws, window.cloudsetup.id)
-            vm.setCloudAPI(api);
+        vm.setCloudAPI(api);
         api.ws.onclose = function () {
+			console.log("Connection Closed! Reconnecting to Cloud provider...");
             connectLoop();
         };
         api.ws.onerror = function () {
+			api.ws.onclose = null;
+			console.error("Unable to connect to Cloud provider! Retrying...");
             connectLoop();
         }
     }

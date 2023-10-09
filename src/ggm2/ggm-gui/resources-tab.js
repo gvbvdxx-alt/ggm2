@@ -1,3 +1,4 @@
+var console = require("log");
 
 //does the resources stuff
 
@@ -48,13 +49,14 @@ resoureupload.onchange = function () {
     if (resourceupload.files[0]) {
         for (const file of resourceupload.files) {
             const reader = new FileReader();
-            console.log(file.name)
+            console.log(file.name);
             reader.onload = function () {
                 readFileAsResource(reader.result, file.name, file.type.split('/')[0]);
                 resourceupload.value = "";
             }
             console.log(file.size);
             if (file.size > 7000000 && false) {
+				console.log("Prevented a overload from happening :)");
                 window.alert("file is too big! for reasons you cant upload something too big, if its music, please compress and find loops, it should help you");
             } else {
                 reader.readAsDataURL(file);

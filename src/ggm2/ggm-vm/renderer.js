@@ -1,3 +1,4 @@
+var console = require("log");
 window.renderer = {
 	canvas: null,
 	bg: document.createElement("img"),

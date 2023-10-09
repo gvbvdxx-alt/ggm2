@@ -1,3 +1,4 @@
+(function () {
 //DO NOT USE, UNUSED AND OLD
 window.libary = [
 ];
@@ -22,3 +23,4 @@ while (index < libary.length) {
 	document.getElementById('libarySelection').appendChild(div);
 	index += 1;
 }
+})();

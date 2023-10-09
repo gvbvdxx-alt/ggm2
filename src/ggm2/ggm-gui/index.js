@@ -1,12 +1,5 @@
-/*
-I get it, its messy,
-its because it had a lot of debugging,
-and errors and stuff, also this was a
-static full html5 page, making stuff slow.
-
-Im currently working on making this code look better on the eye
-
-*/
+var console = require("log");
+var logger = require("log");
 var ggm2path = require("src/paths.js");
 function doScriptAdd(s) {
 	return require("src/"+ggm2path+"/"+s);
@@ -15,11 +8,11 @@ window.shared = false;
 
 window.gui = {
     loadScript: function (src, callback) {
-		doScriptAdd("ggm-gui" + "/" + src);
+		var val = doScriptAdd("ggm-gui" + "/" + src);
 		if (callback) {
-			callback();
+			callback(val);
 		}
-		return null;
+		return val;
     },
     blocks: {
         addExtension: function (json) {
@@ -110,7 +103,6 @@ gui.loadScript("menubar-handler.js");
 gui.loadScript("dialog-handler.js");
 
 //Toolbox Management
-
 window.toolboxManagement = class {
     constructor() {
         this.blockly = Blockly;
@@ -130,22 +122,28 @@ window.toolboxManagement = class {
         this.vm = window.vm;
     }
 };
-gui.loadScript("export-code.js");
-
-
-
-
-
-
-
-gui.loadScript("ask-save-dialog.js");
-
-
-gui.loadScript("scalefix.js"); //faster typing than using require
-gui.loadScript("cloud-runtime.js");
-window.loadDefaultGame = function loadDefaultGame() {
+function loadDefaultGame() {
 	//do we really need set time out? must have thought that was important
 	clearResources();
 	workspace.clear();
-}
+};
+gui.loadScript("export-code.js");
+gui.loadScript("ask-save-dialog.js");
+gui.loadScript("scalefix.js"); //faster typing than using require
+gui.loadScript("cloud-runtime.js");
+window.loadDefaultGame = loadDefaultGame;
 gui.loadScript("blocks/index.js");
+gui.loadScript("left-tabs.js");
+
+gui.loadScript("fullscreen-handler.js");
+
+//make it so the user cannot select everything.
+
+gui.loadScript("selection-fix.js");
+
+//make discription easier to edit.
+
+gui.loadScript("discriptiontools/index.js");
+
+//GGM2 Desktop Stuff:
+gui.loadScript("desktop/index.js");

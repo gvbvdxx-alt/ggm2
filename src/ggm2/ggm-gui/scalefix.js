@@ -6,7 +6,7 @@ var ga = document.getElementById("gameArea");
 setInterval(() => {
     //gs.style.backgroundColor = "white";
     if (ga.getAttribute("class") == "fullscreenGame") {
-        var screenScale = (window.innerHeight) / 360;
+        var screenScale = (window.innerHeight-16) / 360;
         gs.style.width = (screenScale * renderer.width) + "px";
         gs.style.height = (screenScale * renderer.height) - 20 + "px";
     } else {

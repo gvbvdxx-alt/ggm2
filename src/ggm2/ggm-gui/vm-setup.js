@@ -1,3 +1,4 @@
+var console = require("log");
 //for setting up the vm
 
 renderer.canvas = document.getElementById("gameScreen");

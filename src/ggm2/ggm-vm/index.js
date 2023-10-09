@@ -1,3 +1,6 @@
+var console = require("log");
+var ggm2path = require("src/paths.js");
+var Sprite = require("src/"+ggm2path+"/ggm-vm/classes/sprite.js");
 window.vm = {
 	daysSince2000:function () {
 		const msPerDay = 24 * 60 * 60 * 1000;
@@ -155,18 +158,7 @@ window.vm = {
 			makeSprite:function () {
 				try{
 				vm.idcounter += 1;
-				var spr = {
-					direction:90,
-					x:0,
-					y:0,
-					width:32,
-					height:32,
-					image:null,
-					flip:"none",
-					id:vm.idcounter,
-					ghost:0,
-					clicked: []
-				};
+				var spr = new Sprite(vm.idcounter);
 				this.showSprite(spr);
 				return spr;
 				try{

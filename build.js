@@ -1,4 +1,4 @@
-var gvbvdxxPack = require("gvbvdxx-pack");
+var gvbvdxxPack = require("gvbvdxx-pack-2");
 var fs = require("fs");
 var path = require("path");
 var FS = fs;
@@ -16,4 +16,4 @@ function ThroughDirectory(directory) {
 filepathlist = [];
 ThroughDirectory("./src/");
 var files = gvbvdxxPack.compile(filepathlist,false);
-gvbvdxxPack.build(files, fs.readFileSync("template/index.html"), 6546);
+gvbvdxxPack.build(files, fs.readFileSync("template/index-no-ws.html"), 6546);

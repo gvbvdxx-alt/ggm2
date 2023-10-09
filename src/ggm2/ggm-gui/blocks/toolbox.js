@@ -316,7 +316,6 @@ var blocklyBlocks = `<sep></sep>
 			</category>
 		</category>`;
 var toolboxXML = `
-	<category colour="${BlockColors["game"]}" name="Game Engine">
 		<category colour="${BlockColors["game"]}" name="Sprites">
 			
 			
@@ -431,7 +430,6 @@ var toolboxXML = `
 			<block type="gvbvdxx_game_dayssince2000"></block>
 			
 		</category>
-	</category>
 		<category colour="${BlockColors["audio"]}" name="Audio">
 			<block type="gvbvdxx_baudio_create">
 				<value name="dataurl">

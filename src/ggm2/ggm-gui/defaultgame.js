@@ -1,3 +1,5 @@
+var console = require("log");
+//UNUSED
 /* function loadDefaultGame() {
 	setTimeout(() => {
 	readFileAsResource(
